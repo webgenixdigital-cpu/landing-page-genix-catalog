@@ -18,7 +18,7 @@ async function processarNotificacao(req: NextRequest) {
     const supabase = createAdminClient()
     const searchParams = req.nextUrl.searchParams
 
-    let body: any = {}
+    let body: { type?: string; data?: { id?: string } } = {}
     try {
       body = await req.json()
     } catch {
